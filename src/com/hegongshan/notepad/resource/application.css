@@ -1,0 +1,12 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.menuBar{
+	-fx-background-color:#ffffff;
+}
+.siderBar{
+	-fx-background-color:#ff00ff;
+	-fx-border-style:solid;
+	-fx-border-color:white;
+}
+.font {
+	-fx-font-size:18px;
+}
