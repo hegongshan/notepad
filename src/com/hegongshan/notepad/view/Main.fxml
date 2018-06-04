@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioMenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.input.KeyCombination?>
+<?import java.lang.String?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.Tab?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.hegongshan.notepad.controller.MainController">
+	<top>
+		<VBox >
+			<children>
+				<MenuBar styleClass="menuBar">
+					<menus>
+						<Menu text="文件(F)">
+							<items>
+								<MenuItem text="新建(N)" accelerator="CTRL+N" onAction="#newFile"/>
+								<MenuItem text="打开(O)" accelerator="CTRL+O" onAction="#openFile"/>
+								<MenuItem text="另存为(S)" accelerator="CTRL+S" onAction="#saveFile"/>
+								<SeparatorMenuItem/>
+								<MenuItem text="退出(X)" accelerator="ALT+W" onAction="#exit"/>
+							</items>
+						</Menu>
+						<Menu text="格式(O)">
+							<items>
+								<RadioMenuItem text="自动换行(W)" accelerator="ALT+L" onAction="#autoLine"/>
+								<MenuItem text="字体(F)" accelerator="ALT+F" onAction="#getFont"/>
+							</items>
+						</Menu>
+						<Menu text="编码(E)">
+							<items>
+								<MenuItem fx:id="utf8EncodeMenuItem" text="以UTF-8格式编码"></MenuItem>
+								<MenuItem fx:id="bg2312EncodeMenuItem" text="以GB2312格式编码"></MenuItem>
+								<MenuItem fx:id="gbkEncodeMenuItem" text="以GBK格式编码"></MenuItem>
+								<MenuItem fx:id="asciiEncodeMenuItem" text="以US-ASCII格式编码"></MenuItem>
+								<MenuItem fx:id="isoEncodeMenuItem" text="以ISO-8859-1格式编码"></MenuItem>
+							</items>
+						</Menu>
+						<Menu text="帮助(H)">
+							<items>
+								<MenuItem fx:id="aboutMenuItem" text="关于(?)" accelerator="ALT+A" onAction="#aboutMe"/>
+							</items>
+						</Menu>
+					</menus>
+				</MenuBar>
+			</children>
+		</VBox>
+	</top>
+	<center>
+		<TabPane fx:id="tabPane">
+			<tabs>
+				<Tab closable="false" text="* 新建 .txt">
+					<content>
+						<HBox>
+							<children>
+								<VBox fx:id="leftSideBar" alignment="TOP_CENTER" prefWidth="55">
+									<styleClass>
+										<String fx:value="font"/>
+										<String fx:value="sideBar"/>
+									</styleClass>
+									<padding>
+										<Insets top="5" right="5" bottom="5" left="5"></Insets>
+									</padding>
+									<children>
+										<Label text="1"></Label>
+									</children>
+								</VBox>
+								<TextArea fx:id="textArea" styleClass="font" onKeyReleased="#keyRelease"></TextArea>
+							</children>
+						</HBox>
+					</content>
+				</Tab>
+			</tabs>
+		</TabPane>
+	</center>
+	<bottom>
+		<HBox fx:id="bottomBar">
+			
+		</HBox>
+	</bottom>
+</BorderPane>
+

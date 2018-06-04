@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" alignment="CENTER">
+	<children>
+		<Label text="版权声明"></Label>
+		<Label text="作者：贺巩山"></Label>
+		<Label text="网站：https://www.hegongshan.com"></Label>
+		<Label text="版本号：v1.0"></Label>
+	</children>
+</VBox>
+
